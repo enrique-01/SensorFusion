@@ -25,8 +25,8 @@ void kalmanfilter::start()
 
 void kalmanfilter::predict()
 {
-    this->Xn_n = (this->F * this->Xn_n) + (this->G * this->Un);
-    std::cout << "Does it reach here";
+    //this->Xn_n = (this->F * this->Xn_n) + (this->G * this->Un);
+   
 }
 
 void kalmanfilter::update()

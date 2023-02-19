@@ -2,20 +2,15 @@
 ####################### Makefile Template ##############################
 ########################################################################
 
-#INCLUDEPATH +=	-IC:\Users\Enrique\Desktop\eigen-3.4.0 -IC:/opencv/build/include
-#LIBS +=	-LC:\opencv\build\x64\vc16\lib -lopencv_world470 -lopencv_world470d
-
 # Compiler settings - Can be customized.
 CC = g++
-CXXFLAGS = -std=c++11 -IC:\Users\Enrique\Desktop\eigen-3.4.0 #-IC:/opencv/build/include -LC:\opencv\build\x64\vc16\lib
-LDFLAGS = #-lopencv_world470 -lopencv_world470d
-
-
+CXXFLAGS = -std=c++11 -Wall
+LDFLAGS = 
 
 # Makefile settings - Can be customized.
 APPNAME = sensorfusion
 EXT = .cpp
-SRCDIR = .
+SRCDIR = src
 OBJDIR = obj
 
 ############## Do not change anything from here downwards! #############

@@ -3,10 +3,9 @@
 ########################################################################
 
 # Compiler settings - Can be customized.
-CC = g++ 
-CXXFLAGS = -std=c++11 -Wall 
+CC = g++ -I./eigen-3.4.0
+CXXFLAGS = -std=c++11 -Wall
 LDFLAGS = 
-CPPFLAGS = -I./eigen-3.4.0
 
 # Makefile settings - Can be customized.
 APPNAME = sensorfusion

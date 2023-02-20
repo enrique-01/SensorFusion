@@ -1,13 +1,14 @@
 #include <iostream>
 #include "../inc/kalmanfilter.hpp"
-#include "Eigen/Dense"
 
 int main()
 {
+
+ Eigen::VectorXd Xn_n;   
  kalmanfilter obj;
  std::cout << "testw"; 
  obj.start();
-
+ Eigen::VectorXd c;
 return 0;
 
 }

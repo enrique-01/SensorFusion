@@ -1,17 +1,10 @@
 #include "../inc/kalmanfilter.hpp"
 
-// x - state vector
-// P - uncertainty covariance matrix of state x (process covariance)
-// z - measurement vector
-// R - uncertainty covariance matrix of sensor that produces z (measurement covariance)
-// F - update matrix - used to get predicted x - based on time elapsed and assumed dynamic model being tracked
-// H - extraction matrix - used to extract the hypothetical measurement if state x is correct and the sensor is perfect
-// Q - noise covariance matrix - adds uncertainty to the process covariance
-// S - 'innovation' covariance that combines process covariance and measurement covariance
-// y - difference between the actual measurement and the predicted measurement
-// K - Kalman gain - contains information on how much weight to place on the current prediction and current observed measurement
-//   - that will result the final fused updated state vector and process covariance matrix
-//   - computed from P (process covariance), H (extraction), R (measurement covariance)
+//Xn_n+1 Predicted state system vector at time step n+1
+//Xn_n Estimated system state vecotr at time step n
+//Un Control variable (input to system)
+//F State transition matrix
+//G Control matrix for mapping to state variables
 
 kalmanfilter::kalmanfilter()
 {
@@ -25,8 +18,8 @@ void kalmanfilter::start()
 
 void kalmanfilter::predict()
 {
-    //this->Xn_n = (this->F * this->Xn_n) + (this->G * this->Un);
-   
+    this->Xn_n = (this->F * this->Xn_n) + (this->G * this->Un); //Equation for State Extrapolation
+    this->Pn1_n = (this->F * this->Pn_n * this->F.transpose()) + Q; //Equation for Covariance Matrix
 }
 
 void kalmanfilter::update()
